@@ -211,8 +211,20 @@ class Server{
 	private $tickAverage = [20, 20, 20, 20, 20];
 	private $useAverage = [20, 20, 20, 20, 20];
 
+	private $currentTPS = 20;
+
+	private $currentUse = 0;
+
+	private $startTime;
+
+	private $doTitleTick = true;
+
+	private $sendUsageTicker = 0;
+
 	/** @var \AttachableThreadedLogger */
 	private $logger;
+
+	private $memoryManager;
 
 	/** @var CommandReader */
 	private $console = null;
