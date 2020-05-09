@@ -168,7 +168,10 @@ class Server{
 
 	/** @var Server */
 	private static $instance = null;
-	
+
+	/** @var SleepHandler */
+	private $tickSleeper;
+
 	private static $serverId =  0;
 
 	/** @var BanList */
@@ -190,6 +193,10 @@ class Server{
 
 	/** @var PluginManager */
 	private $pluginManager = null;
+
+	private $profilingTickRate = 20;
+
+	private $asyncPool;
 
 	/** @var ServerScheduler */
 	private $scheduler = null;
